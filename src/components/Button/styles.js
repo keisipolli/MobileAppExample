@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#4F63AC',
         paddingVertical: 20,
         paddingHorizontal: 8,
-        borderRadius: 8
+        borderRadius: 8,
+        width: '100%'
     },
     title: {
         color: '#FFFFFF',
@@ -13,4 +14,6 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold'
     }
+
+
 })
