@@ -6,12 +6,19 @@ import {
 	Pressable
 } from "react-native";
 import Button from "../../../components/Button";
-import { styles } from "./styles"; 
+import { styles } from "./styles";
+import Signup from "../SignUp";
+import Signin from "../SignIn";
 
-const Splash = () => {
+const Splash = ({navigation}) => {
+		console.log ('navigation => ', navigation)
 
-	const handlePress = () => {
-        console.log('clicked in splash')
+const onSignup = () => {
+        navigation.navigate('Signup')
+    }
+
+const onSignin = () => {
+        navigation.navigate('Signin')
     }
 
 	return (
@@ -23,13 +30,13 @@ const Splash = () => {
 					<Text style={styles.title}>Here!</Text>
 				</View>
 				
-			<Button title="Sign Up" onPress={handlePress}/>
+			<Button onPress={onSignup} title="Sign Up"/>
 
-			<Pressable hitSlop={20}>
+			<Pressable onPress={onSignin} hitSlop={20}>
                 <Text style={styles.footerText}>Sign In</Text>
             </Pressable>
 
 		</View>
 	)
 }
-export default Splash
+export default React.memo(Splash)
