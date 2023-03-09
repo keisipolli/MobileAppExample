@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { View, Text, Alert } from "react-native";
+import { View, Text, Alert, TouchableOpacity } from "react-native";
 import AuthHeader from "../../../components/AuthHeader";
 import Input from "../../../components/Input";
 import Checkbox from "../../../components/Checkbox";
@@ -60,7 +60,9 @@ const Signin = ({navigation}) => {
 			<Separator text="Or sign up with" />
 			<GoogleLogin />
 			<Text style={styles.footerText}>Don't have an account?
-			 <Text style={styles.footerLink}> Sign Up</Text>
+			<TouchableOpacity onPress={onSignup}>
+			 <Text style={styles.footerLink}> Sign Up </Text>
+			 </TouchableOpacity>
 			</Text>
 		</View>
 		</SafeAreaView>
